@@ -18,22 +18,15 @@ nitro: {
     '@nuxtjs/i18n',
   ],
 
-  i18n: {
-    locales: [
-      { code: 'en', iso: 'en-US', file: 'en.json', name: 'English', dir: 'ltr' },
-      { code: 'ar', iso: 'ar-YE', file: 'ar.json', name: 'العربية', dir: 'rtl' },
-      { code: 'tr', iso: 'tr-TR', file: 'tr.json', name: 'Türkçe', dir: 'ltr' }
-    ],
-    lazy: true,
-    langDir: '../i18n/', // since app is configured or project has a srcDir, let's see where srcDir points or if it's default. Let's make sure it reaches /i18n folder
-    defaultLocale: 'en',
-    strategy: 'no_prefix',
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'root'
-    }
+i18n: {
+  defaultLocale: 'en',
+  strategy: 'no_prefix',
+  detectBrowserLanguage: false,
+  bundle: {
+    fullInstall: true,
   },
+  vueI18n: './i18n.config.ts', 
+},
 
   colorMode: {
     classSuffix: '',
@@ -42,7 +35,7 @@ nitro: {
   },
 
   app: {
-            baseURL: '/me/', 
+            baseURL: '/portfolio/', 
     buildAssetsDir: 'assets',
     head: {
       title: 'Anas AL-MAQTARI — Flutter Developer',

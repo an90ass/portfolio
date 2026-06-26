@@ -5,7 +5,6 @@
       :initial="{ opacity: 0, y: 20 }"
       :visible="{ opacity: 1, y: 0, transition: { duration: 600 } }"
     >
-      <!-- Header -->
       <div class="card-base p-8 mb-4">
         <div class="section-label">
           <span class="font-mono text-accent-blue">~/</span> {{ $t('projects.sectionLabel') }}
@@ -19,7 +18,6 @@
         </div>
       </div>
 
-      <!-- Project cards grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <div
           v-for="(project, i) in projects"
@@ -31,12 +29,9 @@
           :class="project.images.length > 0 ? 'cursor-pointer' : ''"
           @click="project.images.length > 0 ? openLightbox(i, activeSlide[i] || 0) : null"
         >
-          <!-- Image Slider or Gradient Hero -->
           <div class="relative overflow-hidden" style="height: 220px;">
 
-            <!-- === Projects WITH images: slider === -->
             <template v-if="project.images.length > 0">
-              <!-- Slides wrapper -->
               <div
                 class="flex h-full transition-transform duration-500 ease-in-out"
                 :style="{ transform: `translateX(-${(activeSlide[i] || 0) * 100}%)`, width: `${project.images.length * 100}%` }"
@@ -52,7 +47,6 @@
                 />
               </div>
 
-              <!-- Hover overlay with expand hint -->
               <div class="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-all duration-300 flex items-center justify-center pointer-events-none">
                 <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 scale-90 group-hover:scale-100 bg-black/60 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 text-xs text-white border border-white/20">
                   <Maximize2 :size="13" />
@@ -60,10 +54,8 @@
                 </div>
               </div>
 
-              <!-- Gradient overlay bottom -->
               <div class="absolute inset-0 bg-gradient-to-t from-bg-primary/60 via-transparent to-transparent pointer-events-none" />
 
-              <!-- Nav arrows (appear on hover, stop event bubbling) -->
               <button
                 v-if="project.images.length > 1"
                 class="absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-bg-primary/80 backdrop-blur-sm
@@ -83,7 +75,6 @@
                 <ChevronRight :size="14" />
               </button>
 
-              <!-- Dot indicators -->
               <div v-if="project.images.length > 1" class="absolute bottom-2 left-0 right-0 flex justify-center gap-1.5 z-10">
                 <button
                   v-for="(_, dotIdx) in project.images"
@@ -95,7 +86,6 @@
               </div>
             </template>
 
-            <!-- === Projects WITHOUT images: gradient hero === -->
             <template v-else>
               <div class="absolute inset-0 flex flex-col items-center justify-center" :class="project.gradient">
                 <div class="p-5 rounded-2xl bg-white/10 backdrop-blur-sm mb-3 border border-white/10">
@@ -105,7 +95,6 @@
               </div>
             </template>
 
-            <!-- Category badge (always shown) -->
             <div class="absolute top-3 left-3 z-10">
               <span class="text-xs px-2 py-1 rounded-lg bg-bg-primary/80 backdrop-blur-sm text-text-muted border border-bg-border font-mono">
                 {{ project.category }}
@@ -113,9 +102,7 @@
             </div>
           </div>
 
-          <!-- Card Content -->
           <div class="flex flex-col flex-1 p-5">
-            <!-- Title row -->
             <div class="flex items-start justify-between mb-2 gap-2">
               <div class="flex items-center gap-2">
                 <div class="p-2 rounded-xl flex-shrink-0" :class="project.iconBg">
@@ -141,7 +128,6 @@
 
             <p class="text-text-muted text-xs leading-relaxed mb-3 flex-1">{{ project.description }}</p>
 
-            <!-- Tech tags -->
             <div class="flex flex-wrap gap-1.5 mt-auto">
               <span v-for="tag in project.tags" :key="tag" class="tech-badge">{{ tag }}</span>
             </div>
@@ -150,7 +136,6 @@
       </div>
     </div>
 
-    <!-- ======= LIGHTBOX MODAL ======= -->
     <Teleport to="body">
       <Transition name="lb-fade">
         <div
@@ -159,7 +144,6 @@
           style="background: rgba(2, 6, 23, 0.93); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);"
           @click.self="closeLightbox"
         >
-          <!-- Close button -->
           <button
             class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all duration-200 border border-white/20 z-20 hover:scale-110"
             @click="closeLightbox"
@@ -167,17 +151,14 @@
             <X :size="18" />
           </button>
 
-          <!-- Counter top center -->
           <div class="absolute top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 z-20">
             <span class="text-white/80 text-xs font-mono">{{ lightbox.slide + 1 }} / {{ lightboxImages.length }}</span>
           </div>
 
-          <!-- Project title bottom -->
           <div class="absolute bottom-5 left-1/2 -translate-x-1/2 text-center z-20 max-w-xs">
             <p class="text-white/90 font-semibold text-sm">{{ lightboxProject?.title }}</p>
           </div>
 
-          <!-- Dot indicators -->
           <div v-if="lightboxImages.length > 1" class="absolute bottom-14 left-1/2 -translate-x-1/2 flex gap-2 z-20">
             <button
               v-for="(_, idx) in lightboxImages"
@@ -188,7 +169,6 @@
             />
           </div>
 
-          <!-- Main image area -->
           <div class="relative w-full h-full flex items-center justify-center px-20 py-20">
             <Transition :name="slideDirection === 'next' ? 'lb-slide-left' : 'lb-slide-right'" mode="out-in">
               <img
@@ -202,7 +182,6 @@
             </Transition>
           </div>
 
-          <!-- Prev arrow -->
           <button
             v-if="lightboxImages.length > 1"
             class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all duration-200 border border-white/20 z-20 hover:scale-110"
@@ -211,7 +190,6 @@
             <ChevronLeft :size="22" />
           </button>
 
-          <!-- Next arrow -->
           <button
             v-if="lightboxImages.length > 1"
             class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all duration-200 border border-white/20 z-20 hover:scale-110"
@@ -234,7 +212,6 @@ import {
   X, Maximize2
 } from 'lucide-vue-next'
 
-// ─── Card slider state ─────────────────────────────────────────────
 const activeSlide = ref<Record<number, number>>({})
 
 function nextSlide(idx: number, total: number) {
@@ -249,7 +226,6 @@ function setSlide(idx: number, slide: number) {
   activeSlide.value[idx] = slide
 }
 
-// ─── Lightbox state ────────────────────────────────────────────────
 const lightbox = ref({ open: false, projectIdx: -1, slide: 0 })
 const slideDirection = ref<'next' | 'prev'>('next')
 
@@ -293,48 +269,46 @@ function handleKeydown(e: KeyboardEvent) {
 onMounted(() => window.addEventListener('keydown', handleKeydown))
 onUnmounted(() => window.removeEventListener('keydown', handleKeydown))
 
-// ─── Projects data (from translation file & dynamic images) ───────────
 const { t, locale } = useI18n()
 
 const turviaImages = computed(() => {
   if (locale.value === 'ar') {
     return [
-      '/projects/Turvia/3.png',
-      '/projects/Turvia/5.png',
-      '/projects/Turvia/9.png',
-      '/projects/Turvia/12.png',
-      '/projects/Turvia/15.png',
-      '/projects/Turvia/18.png',
-      '/projects/Turvia/21.png',
-      '/projects/Turvia/24.png',
+      useAsset('projects/Turvia/3.png'),
+      useAsset('projects/Turvia/5.png'),
+      useAsset('projects/Turvia/9.png'),
+      useAsset('projects/Turvia/12.png'),
+      useAsset('projects/Turvia/15.png'),
+      useAsset('projects/Turvia/18.png'),
+      useAsset('projects/Turvia/21.png'),
+      useAsset('projects/Turvia/24.png'),
     ]
   } else if (locale.value === 'tr') {
     return [
-      '/projects/Turvia/1.png',
-      '/projects/Turvia/4.png',
-      '/projects/Turvia/7.png',
-      '/projects/Turvia/10.png',
-      '/projects/Turvia/13.png',
-      '/projects/Turvia/16.png',
-      '/projects/Turvia/19.png',
-      '/projects/Turvia/22.png',
-      '/projects/Turvia/26.png',
-      '/projects/Turvia/27.png',
-      '/projects/Turvia/28.png',
-      '/projects/Turvia/29.png',
+      useAsset('projects/Turvia/1.png'),
+      useAsset('projects/Turvia/4.png'),
+      useAsset('projects/Turvia/7.png'),
+      useAsset('projects/Turvia/10.png'),
+      useAsset('projects/Turvia/13.png'),
+      useAsset('projects/Turvia/16.png'),
+      useAsset('projects/Turvia/19.png'),
+      useAsset('projects/Turvia/22.png'),
+      useAsset('projects/Turvia/26.png'),
+      useAsset('projects/Turvia/27.png'),
+      useAsset('projects/Turvia/28.png'),
+      useAsset('projects/Turvia/29.png'),
     ]
   } else {
-    // English (en)
     return [
-      '/projects/Turvia/2.png',
-      '/projects/Turvia/6.png',
-      '/projects/Turvia/8.png',
-      '/projects/Turvia/11.png',
-      '/projects/Turvia/14.png',
-      '/projects/Turvia/17.png',
-      '/projects/Turvia/20.png',
-      '/projects/Turvia/23.png',
-      '/projects/Turvia/25.png',
+      useAsset('projects/Turvia/2.png'),
+      useAsset('projects/Turvia/6.png'),
+      useAsset('projects/Turvia/8.png'),
+      useAsset('projects/Turvia/11.png'),
+      useAsset('projects/Turvia/14.png'),
+      useAsset('projects/Turvia/17.png'),
+      useAsset('projects/Turvia/20.png'),
+      useAsset('projects/Turvia/23.png'),
+      useAsset('projects/Turvia/25.png'),
     ]
   }
 })
@@ -365,15 +339,15 @@ const projects = computed(() => [
     github: null,
     live: 'https://kurtarplatform.github.io/',
     images: [
-      '/projects/Kurtar/grup_takibi.png',
-      '/projects/Kurtar/anlik-konum.png',
-      '/projects/Kurtar/durum_guncelleme.png',
-      '/projects/Kurtar/grup_takibi2.png',
-      '/projects/Kurtar/grup_takibi3.png',
-      '/projects/Kurtar/offline_blue.png',
-      '/projects/Kurtar/veri_mekanizmasi.png',
-      '/projects/Kurtar/yerel_veri_saklama.png',
-      '/projects/Kurtar/ble_mesagges.jpg',
+      useAsset('projects/Kurtar/grup_takibi.png'),
+      useAsset('projects/Kurtar/anlik-konum.png'),
+      useAsset('projects/Kurtar/durum_guncelleme.png'),
+      useAsset('projects/Kurtar/grup_takibi2.png'),
+      useAsset('projects/Kurtar/grup_takibi3.png'),
+      useAsset('projects/Kurtar/offline_blue.png'),
+      useAsset('projects/Kurtar/veri_mekanizmasi.png'),
+      useAsset('projects/Kurtar/yerel_veri_saklama.png'),
+      useAsset('projects/Kurtar/ble_mesagges.jpg'),
     ],
   },
   {
@@ -388,22 +362,22 @@ const projects = computed(() => [
     github: null,
     live: null,
     images: [
-      '/projects/KurtarSaha/Screenshot_1779105687.png',
-      '/projects/KurtarSaha/Screenshot_1779105689.png',
-      '/projects/KurtarSaha/Screenshot_1782488288.png',
-      '/projects/KurtarSaha/Screenshot_1782488294.png',
-      '/projects/KurtarSaha/Screenshot_1782488329.png',
-      '/projects/KurtarSaha/Screenshot_1782488338.png',
-      '/projects/KurtarSaha/Screenshot_1782488348.png',
-      '/projects/KurtarSaha/Screenshot_1782488362.png',
-      '/projects/KurtarSaha/Screenshot_1782488594.png',
-      '/projects/KurtarSaha/Screenshot_1782488603.png',
-      '/projects/KurtarSaha/Screenshot_1782488616.png',
-      '/projects/KurtarSaha/Screenshot_1782488628.png',
-      '/projects/KurtarSaha/Screenshot_1782488637.png',
-      '/projects/KurtarSaha/Screenshot_1782488641.png',
-      '/projects/KurtarSaha/Screenshot_1782488664.png',
-      '/projects/KurtarSaha/Screenshot_1782488669.png',
+      useAsset('projects/KurtarSaha/Screenshot_1779105687.png'),
+      useAsset('projects/KurtarSaha/Screenshot_1779105689.png'),
+      useAsset('projects/KurtarSaha/Screenshot_1782488288.png'),
+      useAsset('projects/KurtarSaha/Screenshot_1782488294.png'),
+      useAsset('projects/KurtarSaha/Screenshot_1782488329.png'),
+      useAsset('projects/KurtarSaha/Screenshot_1782488338.png'),
+      useAsset('projects/KurtarSaha/Screenshot_1782488348.png'),
+      useAsset('projects/KurtarSaha/Screenshot_1782488362.png'),
+      useAsset('projects/KurtarSaha/Screenshot_1782488594.png'),
+      useAsset('projects/KurtarSaha/Screenshot_1782488603.png'),
+      useAsset('projects/KurtarSaha/Screenshot_1782488616.png'),
+      useAsset('projects/KurtarSaha/Screenshot_1782488628.png'),
+      useAsset('projects/KurtarSaha/Screenshot_1782488637.png'),
+      useAsset('projects/KurtarSaha/Screenshot_1782488641.png'),
+      useAsset('projects/KurtarSaha/Screenshot_1782488664.png'),
+      useAsset('projects/KurtarSaha/Screenshot_1782488669.png'),
     ],
   },
   {
@@ -418,9 +392,9 @@ const projects = computed(() => [
     github: null,
     live: null,
     images: [
-      '/projects/DigiVis/onboarding_main.png',
-      '/projects/DigiVis/kyc_verification.png',
-      '/projects/DigiVis/face_match.png',
+      useAsset('projects/DigiVis/onboarding_main.png'),
+      useAsset('projects/DigiVis/kyc_verification.png'),
+      useAsset('projects/DigiVis/face_match.png'),
     ],
   },
   {
@@ -435,22 +409,22 @@ const projects = computed(() => [
     github: 'https://github.com/an90ass/IbanValut',
     live: null,
     images: [
-      '/projects/IbanValut/1.png',
-      '/projects/IbanValut/2.png',
-      '/projects/IbanValut/3.png',
-      '/projects/IbanValut/4.png',
-      '/projects/IbanValut/5.png',
-      '/projects/IbanValut/6.png',
-      '/projects/IbanValut/7.png',
-      '/projects/IbanValut/8.png',
-      '/projects/IbanValut/9.png',
-      '/projects/IbanValut/10.png',
-      '/projects/IbanValut/11.png',
-      '/projects/IbanValut/12.png',
-      '/projects/IbanValut/13.png',
-      '/projects/IbanValut/14.png',
-      '/projects/IbanValut/15.jpg',
-      '/projects/IbanValut/16.png',
+      useAsset('projects/IbanValut/1.png'),
+      useAsset('projects/IbanValut/2.png'),
+      useAsset('projects/IbanValut/3.png'),
+      useAsset('projects/IbanValut/4.png'),
+      useAsset('projects/IbanValut/5.png'),
+      useAsset('projects/IbanValut/6.png'),
+      useAsset('projects/IbanValut/7.png'),
+      useAsset('projects/IbanValut/8.png'),
+      useAsset('projects/IbanValut/9.png'),
+      useAsset('projects/IbanValut/10.png'),
+      useAsset('projects/IbanValut/11.png'),
+      useAsset('projects/IbanValut/12.png'),
+      useAsset('projects/IbanValut/13.png'),
+      useAsset('projects/IbanValut/14.png'),
+      useAsset('projects/IbanValut/15.jpg'),
+      useAsset('projects/IbanValut/16.png'),
     ],
   },
   {
@@ -465,20 +439,20 @@ const projects = computed(() => [
     github: null,
     live: null,
     images: [
-      '/projects/Vakit/1.png',
-      '/projects/Vakit/2.png',
-      '/projects/Vakit/3.png',
-      '/projects/Vakit/4.png',
-      '/projects/Vakit/5.png',
-      '/projects/Vakit/6.png',
-      '/projects/Vakit/7.png',
-      '/projects/Vakit/8.png',
-      '/projects/Vakit/9.png',
-      '/projects/Vakit/10.png',
-      '/projects/Vakit/11.png',
-      '/projects/Vakit/12.png',
-      '/projects/Vakit/13.png',
-      '/projects/Vakit/14.png',
+      useAsset('projects/Vakit/1.png'),
+      useAsset('projects/Vakit/2.png'),
+      useAsset('projects/Vakit/3.png'),
+      useAsset('projects/Vakit/4.png'),
+      useAsset('projects/Vakit/5.png'),
+      useAsset('projects/Vakit/6.png'),
+      useAsset('projects/Vakit/7.png'),
+      useAsset('projects/Vakit/8.png'),
+      useAsset('projects/Vakit/9.png'),
+      useAsset('projects/Vakit/10.png'),
+      useAsset('projects/Vakit/11.png'),
+      useAsset('projects/Vakit/12.png'),
+      useAsset('projects/Vakit/13.png'),
+      useAsset('projects/Vakit/14.png'),
     ],
   },
   {
@@ -493,7 +467,7 @@ const projects = computed(() => [
     github: null,
     live: null,
     images: [
-      '/projects/NetGuard/netGuard.png',
+      useAsset('projects/NetGuard/netGuard.png'),
     ],
   },
   {
@@ -508,14 +482,14 @@ const projects = computed(() => [
     github: null,
     live: null,
     images: [
-      '/projects/LenDeX/1.jpg',
-      '/projects/LenDeX/2.jpg',
-      '/projects/LenDeX/3.jpg',
-      '/projects/LenDeX/4.jpg',
-      '/projects/LenDeX/5.jpg',
-      '/projects/LenDeX/6.jpg',
-      '/projects/LenDeX/7.jpg',
-      '/projects/LenDeX/8.jpg',
+      useAsset('projects/LenDeX/1.jpg'),
+      useAsset('projects/LenDeX/2.jpg'),
+      useAsset('projects/LenDeX/3.jpg'),
+      useAsset('projects/LenDeX/4.jpg'),
+      useAsset('projects/LenDeX/5.jpg'),
+      useAsset('projects/LenDeX/6.jpg'),
+      useAsset('projects/LenDeX/7.jpg'),
+      useAsset('projects/LenDeX/8.jpg'),
     ],
   },
   {
@@ -535,7 +509,6 @@ const projects = computed(() => [
 </script>
 
 <style scoped>
-/* ─── Lightbox overlay fade ─────────────────────── */
 .lb-fade-enter-active,
 .lb-fade-leave-active {
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -546,7 +519,6 @@ const projects = computed(() => [
   transform: scale(0.98);
 }
 
-/* ─── Lightbox image slide left (next) ──────────── */
 .lb-slide-left-enter-active,
 .lb-slide-left-leave-active {
   transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -560,7 +532,6 @@ const projects = computed(() => [
   transform: translateX(-60px) scale(0.97);
 }
 
-/* ─── Lightbox image slide right (prev) ─────────── */
 .lb-slide-right-enter-active,
 .lb-slide-right-leave-active {
   transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
