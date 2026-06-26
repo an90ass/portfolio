@@ -8,9 +8,9 @@ app: {
   },
 
   ssr: true,
-  nitro: {
-    prerender: {
-      routes: ['/']
+nitro: {
+    output: {
+      publicDir: './docs' 
     }
   },
 
