@@ -2,10 +2,7 @@
 export default defineNuxtConfig({
 compatibilityDate: '2025-01-01',
   devtools: { enabled: false },
-app: {
-    baseURL: '/portfolio/', 
-    buildAssetsDir: 'assets',
-  },
+
 
   ssr: true,
 nitro: {
@@ -47,6 +44,8 @@ nitro: {
   app: {
     head: {
       title: 'Anas AL-MAQTARI — Flutter Developer',
+          baseURL: '/portfolio/', 
+    buildAssetsDir: 'assets',
       meta: [
         { name: 'description', content: 'Flutter Developer specializing in AI-powered mobile apps, IoT systems, and clean architecture. Based in Kocaeli, Türkiye.' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
