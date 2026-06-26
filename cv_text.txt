@@ -1,0 +1,103 @@
+﻿--- PAGE 1 ---
+Anas Eskander
+Flutter Developer | Mobile & Backend | anass12976@gmail.com | +905397924923 | ─░ZM─░T, KOCAEL─░, T├£RK─░YE
+PORTFOLIO | LINKEDIN | GITHUB
+ABOUT ME
+Dedicated Flutter Developer with 2+ years of experience in building scalable, high-performance mobile applications. Backed by a strong foundation in
+Python for backend development, I specialize in implementing Clean Architecture principles to create robust, maintainable systems. I am proficient in
+designing fluid, user-centric interfaces and developing solid application logic. My focus is on delivering high-quality mobile solutions that meet user needs,
+generate real value, and drive tangible impact..
+TECHNICAL SKILLS
+Mobile Application DevelopmentΓÇö Advanced Security & Deployment ΓÇö Expert
+Flutter/Dart, State Management: Provider, BLOC, API Integration (HTTP, App Security Best Practices, Token & Authentication Management, Play
+Dio), WebSocket, Push Notifications (FCM, Local), Local Storage & Store & App Store Publishing
+Secure Storage, Offline-first Architecture, Device Sensors, Google Maps &
+Mapbox, Background/Foreground Servisler, SDK Geli┼ƒtirme, UI/UX Databases ΓÇö Advanced
+Principles, Responsive & Adaptive Design, Custom Widget Development PostgreSQL, MySQL, SQLite, Firebase
+Backend & API Development ΓÇö Advanced Cloud & Services ΓÇö Advanced
+Python, FastAPI, Flask, Django, RESTful API Firebase (Authentication, Firestore, Realtime Database, Cloud Functions),
+Google Cloud Platform (GCP), Railway, Render
+Architectural & Software Principles ΓÇö Advanced
+Clean Architecture, MVC, MVVM, SDLC, Data Structures and
+Algorithms (Java)
+Tools & Platforms ΓÇö Proficient
+Git, GitHub, GitLab, Trello, Nginx, Ngrok, Postman & Newman (API
+Manual ve Automated Testing), Canva, Figma
+WORK EXPERIENCE
+T├£B─░TAK 1001 Project Scholar, Mobile Application Developer 26/03/2025 ΓÇô Present| T├£RK─░YE
+Developed a high-performance mobile application using Flutter, featuring real-time location tracking, live monitoring, Google Maps visualization, and
+multi-threaded data processing.
+Engineered robust background services to ensure continuous application performance and seamless operation under heavy workloads.
+Integrated WebSockets to collect, process, and synchronize real-time data from IoT sensors with the backend infrastructure.
+Optimized data pipelines between mobile IoT data collection, APIs, and databases to enhance synchronization efficiency.
+Engineered a resilient offline communication and navigation ecosystem, featuring a secure, BLE-based peer-to-peer group chat with End-to-End
+Encryption (E2EE), and a precise localization and orientation system leveraging Bluetooth RSSI and Magnetometer data.
+Managed backend integration processes, ensuring high standards for real-time data processing, security, and data integrity.
+Coordinated cross-functional teams, facilitating technical integration and communication between AI research and backend engineering units.
+V─░S─░GHT TECHNOLOGY, Software Engineer Intern 20/01/2025 ΓÇô 20/10/2025 | KOCAEL─░, T├£RK─░YE
+Developed the "DigiVis" mobile application using Flutter, implementing secure biometric authentication through MRZ (Machine Readable Zone) and
+NFC reading.
+Implemented automated identity verification by applying Computer Vision algorithms to enhance security protocols.
+Designed and managed backend services, optimizing biometric data processing and real-time validation workflows.
+Built a comprehensive Admin Panel for centralized system management, including log tracking, user management, and operational monitoring.
+Integrated NFC-enabled passports and ID cards into mobile solutions, ensuring a seamless and secure digital identity verification experience.
+EDUCATION
+M.Sc. in Software Engineering, Kocaeli University 10/09/2025 ΓÇô Present | Kocaeli, T├╝rkiye
+B.Sc. in Computer Engineering, BARTIN University 11/10/2021 ΓÇô 24/06/2025 | Bartin, T├╝rkiye
+GPA: 3.42/4.00 | Thesis: AI-Powered Financial System for the Visually Impaired
+AI Application Development Program (1-Year Scholarship) | AI and Technology Academy 01/11/2024 ΓÇô 01/09/2025
+PROJECTS
+ΓÇó TurVia | Smart Tourism & Navigation App, Developed a comprehensive mobile tourism 01/06/2025 ΓÇô Present
+application featuring smart routing, real-time recommendations, and personalized trip planning, and a
+tour management system with secure in-app payments and real-time operational workflows.
+Tech Stack: Flutter, Clean Architecture, Bloc/Cubit, FastAPI, Mapbox, Dio, get it, iyzico/Stripe
+Links: Google Play | App Store
+26/03/2025 ΓÇô Present
+ΓÇó KURTAR | IoT & AI-Based Disaster Response Platform, Developed a disaster response mobile
+application that provides real-time decision support by integrating IoT, mobile sensors, and AI technologies.
+Tech Stack: Flutter, Provider, Clean Architecture, Dio, loT, Al Models, Background/Foreground
+Services, Secure Storage, SQLite, Bluetooth, Push Notifications, Google Maps, Multi-language
+Support, RBAC
+Links: Testflight | APK
+--- PAGE 2 ---
+ΓÇó Kurtar Saha Operasyon | Field Data & AI Inference Suite, Developed an integrated ecosystem consisting 01/01/2026 ΓÇô 20/06/2026
+of two independent mobile applications for seismic research: a field data acquisition tool for high-frequency sensor logging with
+precision sampling control (Hz) and time-series windowing, and an AI inference
+app for real-time model validation. Both integrated via a WebSocket-based architecture
+for seamless data streaming and synchronization with the command dashboard.
+Tech Stack: Flutter, Sensor Framework, Multi-threading, Time-Series Preprocessing, WebSockets, SQLite, AI Inference.
+Links: Available upon request; pending academic paper publication
+ΓÇó DigiVis | Digital Onboarding & KYC SDK, Developed a secure digital onboarding SDK for remote customer 01/03/2025 ΓÇô 30/05/2025
+verification on iOS and Android platforms. The solution integrates high-fidelity camera capture with advanced Liveness Detection
+and Face Matching algorithms for identity verification, complemented by a centralized dashboard for real-time administrative oversight.
+Tech Stack: Flutter, FastAPI, PostgreSQL, MVVM, BLOC, Camera, Text-to-Speech
+(TTS), Multi-language Support, OpenCV, Google ML Kit
+Links: Available upon request
+ΓÇó IbanVault | Secure IBAN Management Utility, Developed a Flutter application using an offline-first approach 01/05/2025 ΓÇô 21/06/2025
+that provides secure IBAN storage using an encrypted local database. The application includes QR code generation/scannin
+g and multi-language support features.
+Tech Stack: Flutter, MVC, Provider, Encrypted Local Storage, QR Code Scanner/Generator, Multi-language Support
+Links: APK
+ΓÇó Vakit | Location-Based Prayer Times App, Developed a multilingual prayer times app that supports GPS 01/07/2025 ΓÇô 21/12/2025
+and manual city selection, and provides timely local notifications.
+Tech Stack: Flutter, Bloc, Hive, Local Notifications
+Links: APK
+ΓÇó AI-Powered Financial System for the Visually Impaired (Undergraduate Graduation Project),
+Using YOLOV5, I developed a mobile application that provides money recognition and financial management for visually impaired users.
+Tech Stack: Flutter, Firebase, Provider, YOLOV5
+Links: Available upon request.
+CERTIFICATIONS
+Mobile Application Development with Google Flutter, BTK Academy 01/07/2024 ΓÇô 10/09/2024
+Python Programming: From Beginner to Advanced, BTK Academy 25/07/2023 ΓÇô 28/09/2023
+HONORS & AWARDS
+Certificate of Honor, Bart─▒n University 24/06/2025
+Awarded for outstanding academic performance and graduating with an Honor Degree in Computer Engineering.
+LANGUAGES
+Arabic: Native| Turkish: C1 | English: B1
+REFERANSLAR
+Muhammed ┼₧ara, Co-Founder, Visight Technology
+muhammedsaraa@gmail.com
+RADHWAN ALI ABDULGHANI SALEH, Researcher, University of A Coru├▒a
+radhwan.saleh@udc.es
+Mustafa Mohammed Saeed GHALEB, Asst. Prof., Kocaeli University
+mustafa.ghaleb@kocaeli.edu.tr

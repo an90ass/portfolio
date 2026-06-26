@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #f8fafc;
+    --bg-secondary: #f1f5f9;
+    --bg-card: #ffffff;
+    --bg-hover: #e2e8f0;
+    --bg-border: #e2e8f0;
+    --bg-badge: rgba(226, 232, 240, 0.6);
+
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
+  }
+
+  .dark {
+    --bg-primary: #0a0f1a;
+    --bg-secondary: #0f1623;
+    --bg-card: #111827;
+    --bg-hover: #1a2235;
+    --bg-border: #1e2d45;
+    --bg-badge: rgba(30, 45, 69, 0.6);
+
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-bg-primary text-text-primary transition-colors duration-300;
+    font-feature-settings: 'liga' 1, 'kern' 1;
+  }
+
+  * {
+    @apply border-bg-border;
+  }
+
+  ::selection {
+    @apply bg-accent-blue/30 text-text-primary;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-bg-primary; }
+  ::-webkit-scrollbar-thumb { @apply bg-bg-border rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-text-muted; }
+}
+
+@layer components {
+  .pause-on-hover:hover .animate-scroll-left,
+  .pause-on-hover:hover .animate-scroll-right {
+    animation-play-state: paused;
+  }
+
+  /* Section label pill */
+  .section-label {
+    @apply inline-flex items-center gap-2 text-xs font-mono font-medium tracking-widest uppercase
+           text-text-muted mb-3;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent-blue via-accent-cyan to-accent-green bg-clip-text text-transparent;
+  }
+
+  /* Tag / badge */
+  .tech-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-badge text-xs font-mono font-medium
+           text-text-secondary border border-bg-border
+           transition-colors duration-150;
+    background-color: var(--bg-badge);
+  }
+
+  .card-base {
+    @apply bg-bg-card border border-bg-border rounded-card
+           transition-all duration-300 ease-out overflow-hidden;
+  }
+}
+
