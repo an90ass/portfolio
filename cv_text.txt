@@ -1,7 +1,7 @@
 ﻿--- PAGE 1 ---
 Anas Eskander
 Flutter Developer | Mobile & Backend | anass12976@gmail.com | +905397924923 | ─░ZM─░T, KOCAEL─░, T├£RK─░YE
-PORTFOLIO | LINKEDIN | GITHUB
+myportfolio | LINKEDIN | GITHUB
 ABOUT ME
 Dedicated Flutter Developer with 2+ years of experience in building scalable, high-performance mobile applications. Backed by a strong foundation in
 Python for backend development, I specialize in implementing Clean Architecture principles to create robust, maintainable systems. I am proficient in

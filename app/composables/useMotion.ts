@@ -1,4 +1,4 @@
-// Re-export vueuse/motion helpers with sensible defaults for the portfolio
+// Re-export vueuse/motion helpers with sensible defaults for the myportfolio
 export const motionPresets = {
   fadeUp: {
     initial: { opacity: 0, y: 24 },

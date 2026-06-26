@@ -1,6 +1,6 @@
-# 🚀 Anass — Personal Portfolio
+# 🚀 Anass — Personal myportfolio
 
-A high-fidelity Bento Grid portfolio built with **Nuxt 3**, **Vue 3**, **TypeScript**, **Tailwind CSS**, and **@vueuse/motion**.
+A high-fidelity Bento Grid myportfolio built with **Nuxt 3**, **Vue 3**, **TypeScript**, **Tailwind CSS**, and **@vueuse/motion**.
 
 ## Tech Stack
 
