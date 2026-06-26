@@ -1,3 +1,7 @@
+import en from './i18n/en.json'
+import ar from './i18n/ar.json'
+import tr from './i18n/tr.json'
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-01-01',
   devtools: { enabled: false },
@@ -17,10 +21,15 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
     strategy: 'no_prefix',
     detectBrowserLanguage: false,
+    locales: ['en', 'ar', 'tr'],
     bundle: {
       fullInstall: true,
     },
-    vueI18n: './i18n.config.ts',
+    vueI18n: {
+      legacy: false,
+      locale: 'en',
+      messages: { en, ar, tr },
+    },
   },
   colorMode: {
     classSuffix: '',
