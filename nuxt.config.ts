@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     output: {
       publicDir: './docs'
     }
-  }, 
+  },
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
@@ -25,11 +25,7 @@ export default defineNuxtConfig({
     bundle: {
       fullInstall: true,
     },
-    vueI18n: {
-      legacy: false,
-      locale: 'en',
-      messages: { en, ar, tr },
-    },
+    vueI18n: './i18n.config.ts',
   },
   colorMode: {
     classSuffix: '',
