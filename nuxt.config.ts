@@ -1,45 +1,37 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-compatibilityDate: '2025-01-01',
+  compatibilityDate: '2025-01-01',
   devtools: { enabled: false },
-
-
   ssr: true,
-nitro: {
+  nitro: {
     output: {
-      publicDir: './docs' 
+      publicDir: './docs'
     }
   },
-
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     '@vueuse/motion/nuxt',
     '@nuxtjs/i18n',
   ],
-
-i18n: {
-  defaultLocale: 'en',
-  strategy: 'no_prefix',
-  detectBrowserLanguage: false,
-  bundle: {
-    fullInstall: true,
+  i18n: {
+    defaultLocale: 'en',
+    strategy: 'no_prefix',
+    detectBrowserLanguage: false,
+    bundle: {
+      fullInstall: true,
+    },
+    vueI18n: './i18n.config.ts',
   },
-  vueI18n: './i18n.config.ts', 
-},
-
   colorMode: {
     classSuffix: '',
     preference: 'dark',
     fallback: 'dark',
   },
-
   app: {
-            baseURL: '/portfolio/', 
+    baseURL: '/portfolio/',
     buildAssetsDir: 'assets',
     head: {
       title: 'Anas AL-MAQTARI — Flutter Developer',
-  
       meta: [
         { name: 'description', content: 'Flutter Developer specializing in AI-powered mobile apps, IoT systems, and clean architecture. Based in Kocaeli, Türkiye.' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -55,6 +47,5 @@ i18n: {
       ],
     },
   },
-
   css: ['~/assets/css/main.css'],
 })
