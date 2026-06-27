@@ -172,5 +172,10 @@
     "quickLinks": "Hızlı Bağlantılar",
     "builtWith": "İle İnşa Edildi",
     "copyright": "Tasarım ve geliştirme"
-  }
+  },
+  "syncledger": {
+  "title": "SyncLedger",
+  "category": "Mobil Uygulama",
+  "description": "Küçük işletmelerin fatura, ürün ve mağaza ayarlarını yönetmesi ve Bluetooth termal yazıcıyla baskı alması için Flutter uygulaması."
+}
 }

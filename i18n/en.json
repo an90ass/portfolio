@@ -172,5 +172,10 @@
     "quickLinks": "Quick Links",
     "builtWith": "Built With",
     "copyright": "Crafted with"
-  }
+  },
+  "syncledger": {
+  "title": "SyncLedger",
+  "category": "Mobile App",
+  "description": "A Flutter app for small businesses to manage billing, products, shop settings, and Bluetooth thermal printing in a streamlined ledger workflow."
+}
 }
